@@ -15,7 +15,7 @@ gem 'mini_magick', '3.8.0'
 group :development, :test do
 	gem 'sqlite3', '1.3.8'
 	gem 'rspec-rails', '2.13.1'
-	# gem 'web-console', '~> 2.0'
+	gem 'web-console'
 end
 
 group :test do

@@ -5,9 +5,9 @@
     <%= f.text_area :title, placeholder: "商品のタイトルを入力してください" %>
   </div>
   <div class="field">
-    <% if @micropost.micropost_image? %>
+    <% if @micropost.image? %>
       <div class="thumbnail">
-        <%= image_tag @micropost.micropost_image.url %>
+        <%= image_tag @micropost.image.url %>
       </div>
     <% end %><br>
     <%= f.label :商品画像 %>
@@ -19,9 +19,9 @@
   </div>
   <div class="field">
     <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
-    <% if @micropost.persisted? && @mincropost.mincropost_image? %>
+    <% if @micropost.persisted? && @mincropost.image? %>
       <label>
-        <%= f.check_box :remove_micropost_image %>
+        <%= f.check_box :remove_image %>
         画像を削除
       </label>
     <% end %>
