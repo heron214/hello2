@@ -1,0 +1,6 @@
+ja:
+	errors:
+		messages:
+			wrong_size: "のサイズは%{file_size}に設定してください"
+			size_too_small: "のサイズは小さすぎます(%{file_size}以上に設定してください)"
+			size_too_big: "のサイズは大きすぎます(%{file_size}以下に設定してください)"

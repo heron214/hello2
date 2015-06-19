@@ -1,0 +1,32 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+       <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+        <%= link_to "レビューを投稿する", new_micropost_path,  
+                               class: "btn btn-large btn-primary" %>
+    </aside>
+    <div class="span8">
+      <h3>レビュー</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+
+<% else %>
+  <div class="center top">
+    <h1 class="top">商品レビュー.comとは？</h1>
+    <br>
+    <h2 class="top">
+    商品紹介を見て、気に入った商品があれば購入ができるWEBサイトです。<br>
+    アカウントを作成すれば、誰でも商品紹介をすることができるようになります。<br>
+    <a href = "https://affiliate.amazon.co.jp"/>アマゾンアソシエイトプログラム</a>に参加して、お小遣いを稼ごう！
+    </h2>
+
+    <%= link_to "アカウントを作成する", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </div>
+  <% end %>

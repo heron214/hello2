@@ -1,0 +1,15 @@
+<li>
+<% if @user.user_image? %>
+  <%= image_tag @user.user_image.url %><br>
+<% end %>
+  <span class="image"><%= image_tag micropost.micropost_image %></span>
+  <span class="content"><%= micropost.content %></span>
+  <span class="timestamp">
+    <%= time_ago_in_words(micropost.created_at) %> ago
+  </span>
+  <% if current_user?(micropost.user) %>
+    <%= link_to "削除する", micropost, method: :delete,
+                                     data: { confirm: "本当に削除しますか?" },
+                                     title: micropost.content %>
+  <% end %>
+</li>

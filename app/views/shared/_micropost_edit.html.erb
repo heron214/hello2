@@ -1,0 +1,25 @@
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+   <div class="field">
+    <% if @micropost.micropost_image? %>
+      <div class="thumbnail">
+        <%= image_tag @micropost.micropost_image.url %>
+      </div>
+    <% end %><br>
+    <%= f.file_field :micropost_image %>
+  </div>
+  
+  <div class="field">
+    <%= f.text_area :content, placeholder: "文章を入力してください" %>
+  </div>
+  <div class="field">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @micropost.persisted? && @mincropost.mincropost_image? %>
+      <label>
+        <%= f.check_box :remove_micropost_image %>
+        画像を削除
+      </label>
+    <% end %>
+  </div>
+  <%= f.submit "投稿する", class: "btn btn-large btn-primary" %>
+<% end %>
